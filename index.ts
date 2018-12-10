@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 
-const server = new Server();
+const server = Server.instance;
 
 //Configuramos el bodyParser para recibir datos
 //parse application/x-www-form-urlencoded
