@@ -4,6 +4,8 @@ import socketIO from 'socket.io';
 //usamos el intermediario http para usar express con socket.
 import http from 'http';
 
+import * as socket from '../sockets/socket';
+
 
 export default class Server {
     //Singleton
@@ -44,6 +46,9 @@ export default class Server {
         //Escuchamos la conexion de un cliente
         this.io.on('connection', cliente =>{
             console.log("Cliente conectado");
+
+            //Desconectar
+            socket.desconectar( cliente );
         });
 
     }
